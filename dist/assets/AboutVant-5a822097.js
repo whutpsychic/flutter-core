@@ -1,0 +1,1 @@
+import{_ as t,j as e,o,k as n}from"./index-67108374.js";const r={mounted(){e.launchInnerExplorer("https://vant-contrib.gitee.io/vant/mobile.html#/zh-CN#/zh-CN/quickstart")}};function a(c,s,i,p,_,l){return o(),n("div")}const f=t(r,[["render",a]]);export{f as default};

@@ -1,11 +1,15 @@
 <template>
-  <iframe src="https://vant-contrib.gitee.io/vant/mobile.html#/zh-CN#/zh-CN/quickstart">
-  </iframe>
+  <div></div>
 </template>
 
 <script>
+import fc from "@/flutter-core/index"
 
-export default {}
+export default {
+  mounted() {
+    fc.launchInnerExplorer("https://vant-contrib.gitee.io/vant/mobile.html#/zh-CN#/zh-CN/quickstart")
+  }
+}
 
 </script>
 

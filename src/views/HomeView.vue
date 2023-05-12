@@ -6,7 +6,7 @@
       <img alt="vant" src="@/assets/vant.png" />
     </div>
     <div class="list">
-      <RouterLink to="/aboutVant">
+      <RouterLink to="" @click="viewVant">
         <p>查看 Vant 组件</p><van-icon name="arrow" />
       </RouterLink>
       <RouterLink to="/aboutFlutter">
@@ -18,9 +18,15 @@
 
 <script>
 import { RouterLink } from 'vue-router'
+import fc from "@/flutter-core/index"
 
 export default {
-  components: { RouterLink }
+  components: { RouterLink },
+  methods: {
+    viewVant() {
+      fc.launchInnerExplorer("https://vant-contrib.gitee.io/vant/mobile.html#/zh-CN#/zh-CN/quickstart")
+    }
+  }
 }
 </script>
 

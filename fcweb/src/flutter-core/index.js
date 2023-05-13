@@ -2,10 +2,11 @@
 // 本模块为 flutter 与 h5 相互通信的对接模块
 // 开发者：zbc
 // 创建日期：2021-06-07
-// 上次修改日期：2023-05-12
+// 上次修改日期：2023-05-13
 // =======================================
 import fc from "./core.js"
-import service from "./service.js"
+import service_base from "./service_base.js"
+import service_device from "./service_device.js"
 
 const module = {};
 
@@ -20,6 +21,24 @@ module.init = (_this) => {
 
 }
 
+// 注册从 flutter 端来的回调函数
+module.await = (name, fn) => {
+  if (name === "modalTips") {
+    fc.register("modalTipsCallback", fn)
+  } else if (name === "modalConfirm") {
+    fc.register("modalConfirmCallback", fn)
+  }
+}
+
+// 卸载函数
+module.uninstall = (name) => {
+  if (name === "modalTips") {
+    fc.unregister("modalTipsCallback")
+  } else if (name === "modalConfirm") {
+    fc.unregister("modalConfirmCallback")
+  }
+}
+
 // *************************** 系统通用 ***************************
 // 注册/卸载函数
 module.register = fc.register
@@ -28,4 +47,4 @@ module.unregister = fc.unregister
 // 预留的万能通道函数
 module.call = fc.call
 
-export default { ...module, ...service };
+export default { ...module, ...service_base, ...service_device };

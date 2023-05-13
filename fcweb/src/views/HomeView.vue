@@ -9,8 +9,14 @@
       <RouterLink to="" @click="viewVant">
         <p>查看 Vant 组件</p><van-icon name="arrow" />
       </RouterLink>
-      <RouterLink to="/aboutFlutter">
-        <p>查看 Flutter 服务</p><van-icon name="arrow" />
+      <RouterLink to="/flutterBase">
+        <p>Flutter 基础功能</p><van-icon name="arrow" />
+      </RouterLink>
+      <RouterLink to="/flutterDevice">
+        <p>Flutter 设备功能</p><van-icon name="arrow" />
+      </RouterLink>
+      <RouterLink to="/devicePermissions">
+        <p>Flutter 权限请求</p><van-icon name="arrow" />
       </RouterLink>
     </div>
   </main>

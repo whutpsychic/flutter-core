@@ -15,11 +15,11 @@ export default {
   mounted() {
     // 如果需要在提示时暂停并且等待回馈，那么需要注册此函数
     fc.await("modalTips", (res) => {
-      alert(res)
+      fc.toast(res)
     })
     // 模态确认询问时等待回馈，需要注册此函数
     fc.await("modalConfirm", (res) => {
-      alert(res)
+      fc.toast(res)
     })
   },
   unmounted() {

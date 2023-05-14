@@ -6,17 +6,18 @@
 </template>
 
 <script>
+import fc from "@/flutter-core/index"
 import fp from "@/flutter-core/permissions"
 
 export default {
   mounted() {
     // 注册权限请求之后的动作函数
     fp.await("camera", (res) => {
-      alert(res)
+      fc.toast(res)
     })
     // 模态确认询问时等待回馈，需要注册此函数
     fp.await("storage", (res) => {
-      alert(res)
+      fc.toast(res)
     })
   },
   unmounted() {

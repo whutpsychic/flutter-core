@@ -6,6 +6,20 @@ const permissions = {};
 // 所有权限列表
 permissions.permissionList = ["camera", "storage"]
 
+// flutter 权限状态表
+permissions.status = {
+  // 未经申请，需要向系统申请
+  denied: "Permissions.denied",
+  // 允许或本次允许
+  granted: "Permissions.granted",
+  // 设备不允许触碰此规则，需要打开系统设置界面进行设定权限(iOS)
+  restricted: "Permissions.restricted",
+  // 受限的授权(iOS14+)
+  limited: "Permissions.limited",
+  // 未授权状态，需打开系统设置改变权限
+  permanentlyDenied: "Permissions.permanentlyDenied",
+}
+
 // 注册回调函数
 permissions.await = (name, fn) => {
   if (name === "camera") {

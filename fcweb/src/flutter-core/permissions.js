@@ -9,15 +9,20 @@ permissions.permissionList = ["camera", "storage"]
 // flutter 权限状态表
 permissions.status = {
   // 未经申请，需要向系统申请
-  denied: "Permissions.denied",
+  denied: "PermissionStatus.denied",
   // 允许或本次允许
-  granted: "Permissions.granted",
+  granted: "PermissionStatus.granted",
   // 设备不允许触碰此规则，需要打开系统设置界面进行设定权限(iOS)
-  restricted: "Permissions.restricted",
+  restricted: "PermissionStatus.restricted",
   // 受限的授权(iOS14+)
-  limited: "Permissions.limited",
+  limited: "PermissionStatus.limited",
   // 未授权状态，需打开系统设置改变权限
-  permanentlyDenied: "Permissions.permanentlyDenied",
+  permanentlyDenied: "PermissionStatus.permanentlyDenied",
+}
+
+// 打开App权限设置
+permissions.openAppSettings = () => {
+  fc.call("openAppSettings")
 }
 
 // 注册回调函数

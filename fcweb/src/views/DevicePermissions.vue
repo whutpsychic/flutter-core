@@ -8,7 +8,7 @@
 
 <script>
 import fc from "@/flutter-core/index"
-import fp from "@/flutter-core/permissions"
+import fp from "@/flutter-core/permissions.js"
 
 export default {
   mounted() {

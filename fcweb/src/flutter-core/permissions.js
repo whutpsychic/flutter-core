@@ -1,5 +1,5 @@
 import fc from "./index"
-import { preName } from "./static"
+import { preName } from "./base/static"
 
 const permissions = {};
 

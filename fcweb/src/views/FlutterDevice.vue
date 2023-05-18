@@ -4,13 +4,28 @@
     <van-button class="btn-item" type="primary" block @click="phonecall">拨打电话: 139 8888 8888</van-button>
     <van-button class="btn-item" type="primary" block @click="launchInExplorer">在外部浏览器中打开网页（百度）</van-button>
     <van-button class="btn-item" type="primary" block @click="launchInnerExplorer">在内嵌浏览器中打开网页（腾讯）</van-button>
+    <van-button class="btn-item" type="primary" block @click="scanQR">扫描二维码</van-button>
+    <van-button class="btn-item" type="primary" block @click="scanBarcode">扫描条形码</van-button>
+    <van-button class="btn-item" type="primary" block @click="scan">混合扫描(二维码或者条形码)</van-button>
+    <van-button class="btn-item" type="primary" block @click="androidBattery">Android 获取电池电量</van-button>
+    <van-button class="btn-item" type="primary" block @click="androidTost">Android 原生Toast</van-button>
   </main>
 </template>
 
 <script>
 import fc from "@/flutter-core/index"
+import { android } from "@/flutter-core/platform.js"
 
 export default {
+  mounted() {
+    fc.await("scanner", (res) => {
+      fc.toast(res)
+    })
+
+    android.await("batteryInfo", (res) => {
+      fc.toast(`电池电量${res}%`)
+    })
+  },
   methods: {
     appUpdate() {
       fc.appUpdate("http://nxbhyt.cn:8280/exam/app/bhyt.apk")
@@ -21,8 +36,23 @@ export default {
     launchInExplorer() {
       fc.launchInExplorer("https://www.baidu.com")
     },
-    launchInnerExplorer() { 
+    launchInnerExplorer() {
       fc.launchInnerExplorer("https://www.tencent.com/zh-cn/")
+    },
+    scanQR() {
+      fc.scanQR()
+    },
+    scanBarcode() {
+      fc.scanBarcode()
+    },
+    scan() {
+      fc.scan()
+    },
+    androidBattery() {
+      android.getBatteryInfo()
+    },
+    androidTost() {
+      android.toast("Android 原生短提示信息！")
     },
   }
 }

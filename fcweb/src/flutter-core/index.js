@@ -2,9 +2,9 @@
 // 本模块为 flutter 与 h5 相互通信的对接模块
 // 开发者：zbc
 // 创建日期：2021-06-07
-// 上次修改日期：2023-05-13
+// 上次修改日期：2023-05-18
 // =======================================
-import fc from "./core.js"
+import fc from "./base/core.js"
 import service_base from "./service_base.js"
 import service_device from "./service_device.js"
 
@@ -25,8 +25,15 @@ module.init = (_this) => {
 module.await = (name, fn) => {
   if (name === "modalTips") {
     fc.register("modalTipsCallback", fn)
-  } else if (name === "modalConfirm") {
+  }
+  else if (name === "modalConfirm") {
     fc.register("modalConfirmCallback", fn)
+  }
+  else if (name === "scanner") {
+    fc.register("scannerCallback", fn)
+  }
+  else if (name === "readLocal") {
+    fc.register("readLocalCallback", fn)
   }
 }
 

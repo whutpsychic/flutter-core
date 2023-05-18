@@ -5,6 +5,8 @@
     <van-button class="btn-item" type="primary" block @click="modalConfirm">模态确认询问</van-button>
     <van-button class="btn-item" type="primary" block @click="modalLoading">模态加载中</van-button>
     <van-button class="btn-item" type="primary" block @click="modalProgress">模态进度条</van-button>
+    <van-button class="btn-item" type="primary" block @click="writeLocalData">写入本地缓存数据</van-button>
+    <van-button class="btn-item" type="primary" block @click="readLocalData">读取本地缓存数据</van-button>
   </main>
 </template>
 
@@ -19,6 +21,10 @@ export default {
     })
     // 模态确认询问时等待回馈，需要注册此函数
     fc.await("modalConfirm", (res) => {
+      fc.toast(res)
+    })
+    // 读取数据
+    fc.await("readLocal", (res) => {
       fc.toast(res)
     })
   },
@@ -49,6 +55,12 @@ export default {
       setTimeout(() => { fc.modalProgressAdd(0.2) }, 4000)
       setTimeout(() => { fc.modalProgressAdd(0.2) }, 5000)
       setTimeout(() => { fc.done() }, 6000)
+    },
+    writeLocalData() {
+      fc.recordLocal("hell", "xxxxx")
+    },
+    readLocalData() {
+      fc.readLocal("hell")
     },
   }
 }

@@ -7,6 +7,7 @@
     <van-button class="btn-item" type="primary" block @click="modalProgress">模态进度条</van-button>
     <van-button class="btn-item" type="primary" block @click="writeLocalData">写入本地缓存数据</van-button>
     <van-button class="btn-item" type="primary" block @click="readLocalData">读取本地缓存数据</van-button>
+    <van-button class="btn-item" type="primary" block @click="ipconfig">ip 设置</van-button>
   </main>
 </template>
 
@@ -61,6 +62,9 @@ export default {
     },
     readLocalData() {
       fc.readLocal("hell")
+    },
+    ipconfig() {
+      fc.ipconfig()
     },
   }
 }

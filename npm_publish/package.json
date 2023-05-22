@@ -1,0 +1,14 @@
+{
+  "name": "flutter-core",
+  "version": "0.0.1",
+  "description": "rtzl's flutter hybrid app logic core",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "whutpsychic"
+  ],
+  "author": "zbc",
+  "license": "ISC"
+}

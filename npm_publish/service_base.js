@@ -50,9 +50,4 @@ service.readLocal = (key) => {
   fc.call(`readLocal${argsSpliter}${key}`)
 }
 
-// 读取本地缓存值
-service.ipconfig = () => {
-  fc.call(`ipConfig`)
-}
-
 export default service;

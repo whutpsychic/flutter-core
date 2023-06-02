@@ -40,4 +40,14 @@ service.scan = () => {
   fc.call(`scanner`)
 }
 
+// 检查网络连接
+service.checkNetwork = () => {
+  fc.call(`connectivityCheck`)
+}
+
+// 检查网络连接类型
+service.checkNetworkType = () => {
+  fc.call(`connectionTypeCheck`)
+}
+
 export default service;

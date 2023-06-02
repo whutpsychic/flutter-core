@@ -23,17 +23,29 @@ module.init = (_this) => {
 
 // 注册从 flutter 端来的回调函数
 module.await = (name, fn) => {
+  // 模态提示结果返回
   if (name === "modalTips") {
     fc.register("modalTipsCallback", fn)
   }
+  // 模态确认结果返回
   else if (name === "modalConfirm") {
     fc.register("modalConfirmCallback", fn)
   }
+  // 扫码结果返回
   else if (name === "scanner") {
     fc.register("scannerCallback", fn)
   }
+  // 读取本地缓存结果返回
   else if (name === "readLocal") {
     fc.register("readLocalCallback", fn)
+  }
+  // 检查网络连接返回
+  else if (name === "connectivityCheck") {
+    fc.register("connectivityCheckCallback", fn)
+  }
+  // 检查网络连接类型返回
+  else if (name === "connectionTypeCheck") {
+    fc.register("connectionTypeCheckCallback", fn)
   }
 }
 

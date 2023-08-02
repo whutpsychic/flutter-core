@@ -1,32 +1,52 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import DemoAppHome from '../views/demoapp/HomeView.vue'
+import Nav from '../views/nav.vue'
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/',
-      name: 'home',
-      component: HomeView
+      path: '/nav',
+      component: Nav
+    },
+    // --------------------------- flutter-core document ---------------------------
+    // --------------------------- h5 components document ---------------------------
+    // --------------------------- demoapp ---------------------------
+    {
+      path: '/home',
+      // name: 'home',
+      component: DemoAppHome
     },
     {
       path: '/flutterBase',
-      name: 'flutterBase',
+      // name: 'flutterBase',
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../views/FlutterBase.vue')
+      component: () => import('../views/demoapp/FlutterBase.vue')
     },
     {
       path: '/flutterDevice',
-      name: 'flutterDevice',
-      component: () => import('../views/FlutterDevice.vue')
+      // name: 'flutterDevice',
+      component: () => import('../views/demoapp/FlutterDevice.vue')
     },
     {
       path: '/devicePermissions',
-      name: 'devicePermissions',
-      component: () => import('../views/DevicePermissions.vue')
-    }
+      // name: 'devicePermissions',
+      component: () => import('../views/demoapp/DevicePermissions.vue')
+    },
+    // ********************************************************************************
+    // 默认导向
+    {
+      path: '/',
+      redirect: "/nav"
+    },
+    // 404
+    {
+      path: '/:pathMatch(.*)*',
+      name: 'notFound',
+      component: () => import('../views/404/main.vue')
+    },
   ]
 })
 

@@ -1,6 +1,11 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import DemoAppHome from '../views/demoapp/HomeView.vue'
 import Nav from '../views/nav.vue'
+import DemoAppHome from '../views/demoapp/HomeView.vue'
+import H5Doc from '../views/document-h5/main.vue'
+
+import C1 from '../views/document-h5/contents/c1.vue'
+import C2 from '../views/document-h5/contents/c2.vue'
+import C3 from '../views/document-h5/contents/c3.vue'
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
@@ -11,6 +16,32 @@ const router = createRouter({
     },
     // --------------------------- flutter-core document ---------------------------
     // --------------------------- h5 components document ---------------------------
+    {
+      path: '/h5/:name',
+      component: H5Doc,
+      children: [
+        {
+          path: '',
+          // component: () => import('../views/document-h5/contents/c1.vue')
+          component: C1
+        },
+        {
+          path: 'c1',
+          // component: () => import('../views/document-h5/contents/c1.vue')
+          component: C1
+        },
+        {
+          path: 'c2',
+          // component: () => import('../views/document-h5/contents/c1.vue')
+          component: C2
+        },
+        {
+          path: 'c3',
+          // component: () => import('../views/document-h5/contents/c2.vue')
+          component: C3
+        },
+      ]
+    },
     // --------------------------- demoapp ---------------------------
     {
       path: '/home',
@@ -40,6 +71,10 @@ const router = createRouter({
     {
       path: '/',
       redirect: "/nav"
+    },
+    {
+      path: '/h5',
+      redirect: "/h5/doc/c1"
     },
     // 404
     {

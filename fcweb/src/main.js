@@ -1,4 +1,5 @@
 import './style/global.css'
+import './style/common.scss'
 
 import { createApp } from 'vue'
 import { Icon } from 'vant'

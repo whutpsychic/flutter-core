@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@vant/area-data": "^1.5.0",
+    "element-plus": "^2.3.8",
     "moment": "^2.29.4",
     "rtlink-core": "^0.3.5",
     "vant": "^4.6.3",
@@ -27,6 +28,7 @@
     "prettier": "^2.8.8",
     "sass": "^1.62.1",
     "sass-loader": "^13.2.2",
+    "unplugin-auto-import": "^0.16.6",
     "unplugin-vue-components": "^0.25.1",
     "vite": "^4.3.4"
   }

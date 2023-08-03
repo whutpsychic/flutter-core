@@ -5,9 +5,9 @@
       <div class="page-main">
         <router-view></router-view>
       </div>
-      <div class="iframe">
-        <iframe class="inner-iframe" width="400" height="720" src="http://192.168.1.33:8080/#/h5demo/form"></iframe>
-      </div>
+      <!-- <div class="iframe">
+        <iframe class="inner-iframe" src="http://192.168.1.33:8082/"></iframe>
+      </div> -->
     </div>
   </main>
 </template>
@@ -28,12 +28,17 @@ import LeftMenu from './left-menu/main.vue'
 }
 
 .iframe {
+  width: 400px;
+  height: 720px;
   border: solid 2px #aaa;
   border-radius: 20px;
   overflow: hidden;
   margin-top: 20px;
+  -webkit-overflow-scrolling: touch;
 
   .inner-iframe {
+    width: 100%;
+    height: 100%;
     border: none;
   }
 }

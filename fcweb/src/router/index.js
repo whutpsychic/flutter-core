@@ -21,6 +21,10 @@ const router = createRouter({
           component: () => import('../views/document-h5/contents/preview.vue')
         },
         {
+          path: 'app-container',
+          component: () => import('../views/document-h5/contents/app-container.vue')
+        },
+        {
           path: 'form',
           component: () => import('../views/document-h5/contents/form.vue')
         },
@@ -31,20 +35,6 @@ const router = createRouter({
         {
           path: 'top-searcher',
           component: () => import('../views/document-h5/contents/top-searcher.vue')
-        },
-      ]
-    },
-    {
-      path: '/h5demo/:name',
-      component: H5Doc,
-      children: [
-        {
-          path: '',
-          component: () => import('../views/document-h5/demo/main.vue')
-        },
-        {
-          path: 'form',
-          component: () => import('../views/document-h5/demo/commonForm/main.vue')
         },
       ]
     },

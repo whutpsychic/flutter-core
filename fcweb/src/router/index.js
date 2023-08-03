@@ -3,10 +3,6 @@ import Nav from '../views/nav.vue'
 import DemoAppHome from '../views/demoapp/HomeView.vue'
 import H5Doc from '../views/document-h5/main.vue'
 
-import C1 from '../views/document-h5/contents/c1.vue'
-import C2 from '../views/document-h5/contents/c2.vue'
-import C3 from '../views/document-h5/contents/c3.vue'
-
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
@@ -21,24 +17,34 @@ const router = createRouter({
       component: H5Doc,
       children: [
         {
+          path: 'preview',
+          component: () => import('../views/document-h5/contents/preview.vue')
+        },
+        {
+          path: 'form',
+          component: () => import('../views/document-h5/contents/form.vue')
+        },
+        {
+          path: 'pullable-list',
+          component: () => import('../views/document-h5/contents/pullable-list.vue')
+        },
+        {
+          path: 'top-searcher',
+          component: () => import('../views/document-h5/contents/top-searcher.vue')
+        },
+      ]
+    },
+    {
+      path: '/h5demo/:name',
+      component: H5Doc,
+      children: [
+        {
           path: '',
-          // component: () => import('../views/document-h5/contents/c1.vue')
-          component: C1
+          component: () => import('../views/document-h5/demo/main.vue')
         },
         {
-          path: 'c1',
-          // component: () => import('../views/document-h5/contents/c1.vue')
-          component: C1
-        },
-        {
-          path: 'c2',
-          // component: () => import('../views/document-h5/contents/c1.vue')
-          component: C2
-        },
-        {
-          path: 'c3',
-          // component: () => import('../views/document-h5/contents/c2.vue')
-          component: C3
+          path: 'form',
+          component: () => import('../views/document-h5/demo/commonForm/main.vue')
         },
       ]
     },
@@ -74,7 +80,7 @@ const router = createRouter({
     },
     {
       path: '/h5',
-      redirect: "/h5/doc/c1"
+      redirect: "/h5/doc/preview"
     },
     // 404
     {

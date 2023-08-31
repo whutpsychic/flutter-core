@@ -1,7 +1,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import Nav from '../views/nav.vue'
-import DemoAppHome from '../views/demoapp/HomeView.vue'
 import H5Doc from '../views/document-h5/main.vue'
+import FlutterCoreDoc from '../views/document-flutter-core/main.vue'
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
@@ -38,29 +38,20 @@ const router = createRouter({
         },
       ]
     },
-    // --------------------------- demoapp ---------------------------
+    // --------------------------- flutter-core ---------------------------
     {
-      path: '/home',
-      // name: 'home',
-      component: DemoAppHome
-    },
-    {
-      path: '/flutterBase',
-      // name: 'flutterBase',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/demoapp/FlutterBase.vue')
-    },
-    {
-      path: '/flutterDevice',
-      // name: 'flutterDevice',
-      component: () => import('../views/demoapp/FlutterDevice.vue')
-    },
-    {
-      path: '/devicePermissions',
-      // name: 'devicePermissions',
-      component: () => import('../views/demoapp/DevicePermissions.vue')
+      path: '/flutter-core/:name',
+      component: FlutterCoreDoc,
+      children: [
+        {
+          path: 'preview',
+          component: () => import('../views/document-flutter-core/contents/preview.vue')
+        },
+        {
+          path: 'toast',
+          component: () => import('../views/document-flutter-core/contents/toast.vue')
+        },
+      ]
     },
     // ********************************************************************************
     // 默认导向
@@ -71,6 +62,10 @@ const router = createRouter({
     {
       path: '/h5',
       redirect: "/h5/doc/preview"
+    },
+    {
+      path: '/flutter-core',
+      redirect: "/flutter-core/doc/preview"
     },
     // 404
     {

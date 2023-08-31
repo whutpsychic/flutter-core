@@ -19,7 +19,7 @@
       <el-table-column prop="values" label="可选值" />
       <el-table-column prop="defaultValue" label="默认值" />
     </el-table>
-    <h3>items 可选值参考</h3>
+    <h3>items-type 可选值参考</h3>
     <el-table :data="config2" style="width: 100%">
       <el-table-column prop="col1" label=" " width="120" />
       <el-table-column prop="col2" label="mode: String" />

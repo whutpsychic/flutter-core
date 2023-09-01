@@ -1,10 +1,10 @@
 <template>
   <div class="m-can">
     <ul>
-      <li><el-button class="btn-item" type="primary" @click="navto('flutter-core')">flutter-core Document</el-button></li>
-      <li><el-button class="btn-item" type="primary" @click="navto('h5')">h5 components Document</el-button></li>
-      <li><el-button class="btn-item" type="primary" @click="navto2('http://whutpsychic.gitee.io/rtlink-ui-plus/#/document/Icons')">rtlink-ui-plus Document</el-button></li>
-      <li><el-button class="btn-item" type="primary" @click="navto2('http://whutpsychic.gitee.io/rtlink-core/#/document/deepClone')">rtlink-core Document</el-button></li>
+      <li><el-button class="btn-item" type="primary" @click="navto('flutter-core')">Flutter-core Document</el-button></li>
+      <li><el-button class="btn-item" type="primary" @click="navto('h5')">H5 components Document</el-button></li>
+      <li><el-button class="btn-item" type="primary" @click="navto2('http://whutpsychic.gitee.io/rtlink-ui-plus/#/document/Icons')">Rtlink-ui-plus Document</el-button></li>
+      <li><el-button class="btn-item" type="primary" @click="navto2('http://whutpsychic.gitee.io/rtlink-core/#/document/deepClone')">Rtlink-core Document</el-button></li>
     </ul>
   </div>
 </template>

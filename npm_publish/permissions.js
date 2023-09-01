@@ -1,10 +1,10 @@
-import fc from "./index"
-import { preName } from "./base/static"
+import fc from "./index";
+import { preName } from "./base/static";
 
 const permissions = {};
 
 // 所有权限列表
-permissions.permissionList = ["camera", "storage"]
+permissions.permissionList = ["camera", "storage"];
 
 // flutter 权限状态表
 permissions.status = {
@@ -22,27 +22,27 @@ permissions.status = {
 
 // 打开App权限设置
 permissions.openAppSettings = () => {
-  fc.call("openAppSettings")
-}
+  fc.call("openAppSettings");
+};
 
 // 注册回调函数
 permissions.await = (name, fn) => {
   if (name === "camera") {
-    fc.register("aprcamera", fn)
+    fc.register("aprcamera", fn);
   }
   else if (name === "storage") {
-    fc.register("aprstorage", fn)
+    fc.register("aprstorage", fn);
   }
-}
+};
 
 // 卸载函数
 permissions.uninstall = (name) => {
   if (name === "camera") {
-    fc.unregister("aprcamera")
+    fc.unregister("aprcamera");
   } else if (name === "storage") {
-    fc.unregister("aprstorage")
+    fc.unregister("aprstorage");
   }
-}
+};
 
 // 权限请求
 // h5 通过 flutter 向设备请求权限
@@ -51,7 +51,7 @@ permissions.request = (permissionName) => {
   if (typeof permissionName != "string")
     throw new Error("permissions.request函数中你传给flutter端的信息不是一个字符串,将无法识别!");
   else {
-    let valid = false
+    let valid = false;
     for (let it of permissions.permissionList) {
       if (it === permissionName) {
         valid = true;
@@ -75,6 +75,6 @@ permissions.request = (permissionName) => {
   }
 
   window[`${preName}requestPermission`].postMessage(permissionName);
-}
+};
 
 export default { ...permissions };

@@ -1,6 +1,6 @@
 <template>
   <div class="top-section">
-    <p># Flutter-core Document</p>
+    <p># Flutter-core Document<span>v0.1.0</span></p>
   </div>
   <main class="page-container">
     <div class="page-content">
@@ -26,14 +26,15 @@ import LeftMenu from './left-menu/main.vue'
   height: 60px;
   background-color: white;
   border-bottom: solid 1px #eee;
-  padding: 0 40px;
 
   p {
-    margin: 0;
+    margin: 0 40px;
     line-height: 60px;
     color: #666;
     font-size: 17px;
     font-weight: bold;
+    display: flex;
+    justify-content: space-between;
   }
 }
 

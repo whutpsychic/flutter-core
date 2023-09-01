@@ -18,6 +18,9 @@
 
 <style lang="scss" scoped>
 .left-el-menu-vertical {
-  width: 240px;
+  width: 280px;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 </style>

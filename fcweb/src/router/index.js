@@ -47,9 +47,100 @@ const router = createRouter({
           path: 'preview',
           component: () => import('../views/document-flutter-core/contents/preview.vue')
         },
+        // -------------------------- native --------------------------
         {
           path: 'toast',
           component: () => import('../views/document-flutter-core/contents/toast.vue')
+        },
+        {
+          path: 'modalTips',
+          component: () => import('../views/document-flutter-core/contents/modalTips.vue')
+        },
+        {
+          path: 'modalConfirm',
+          component: () => import('../views/document-flutter-core/contents/modalConfirm.vue')
+        },
+        {
+          path: 'modalLoading',
+          component: () => import('../views/document-flutter-core/contents/modalLoading.vue')
+        },
+        {
+          path: 'modalProgress',
+          component: () => import('../views/document-flutter-core/contents/modalProgress.vue')
+        },
+        {
+          path: 'done',
+          component: () => import('../views/document-flutter-core/contents/done.vue')
+        },
+        {
+          path: 'recordLocal',
+          component: () => import('../views/document-flutter-core/contents/recordLocal.vue')
+        },
+        {
+          path: 'readLocal',
+          component: () => import('../views/document-flutter-core/contents/readLocal.vue')
+        },
+        {
+          path: 'ipconfig',
+          component: () => import('../views/document-flutter-core/contents/ipconfig.vue')
+        },
+        // -------------------------- device --------------------------
+        {
+          path: 'appUpdate',
+          component: () => import('../views/document-flutter-core/contents/appUpdate.vue')
+        },
+        {
+          path: 'phonecall',
+          component: () => import('../views/document-flutter-core/contents/phonecall.vue')
+        },
+        {
+          path: 'launchInExplorer',
+          component: () => import('../views/document-flutter-core/contents/launchInExplorer.vue')
+        },
+        {
+          path: 'launchInnerExplorer',
+          component: () => import('../views/document-flutter-core/contents/launchInnerExplorer.vue')
+        },
+        {
+          path: 'scanQR',
+          component: () => import('../views/document-flutter-core/contents/scanQR.vue')
+        },
+        {
+          path: 'scanBarcode',
+          component: () => import('../views/document-flutter-core/contents/scanBarcode.vue')
+        },
+        {
+          path: 'scan',
+          component: () => import('../views/document-flutter-core/contents/scan.vue')
+        },
+        {
+          path: 'checkNetworkType',
+          component: () => import('../views/document-flutter-core/contents/checkNetworkType.vue')
+        },
+        {
+          path: 'getSafeHeight',
+          component: () => import('../views/document-flutter-core/contents/getSafeHeight.vue')
+        },
+        {
+          path: 'setTopbarStyleToDark',
+          component: () => import('../views/document-flutter-core/contents/setTopbarStyleToDark.vue')
+        },
+        {
+          path: 'setTopbarStyleToLight',
+          component: () => import('../views/document-flutter-core/contents/setTopbarStyleToLight.vue')
+        },
+        // -------------------------- permissions --------------------------
+        {
+          path: 'permissions/camera',
+          component: () => import('../views/document-flutter-core/contents/permissions/camera.vue')
+        },
+        {
+          path: 'permissions/storage',
+          component: () => import('../views/document-flutter-core/contents/permissions/storage.vue')
+        },
+        {
+          path: 'permissions/openAppSettings',
+          component: () => import('../views/document-flutter-core/contents/permissions/openAppSettings.vue')
         },
       ]
     },

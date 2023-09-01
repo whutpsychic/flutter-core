@@ -1,4 +1,7 @@
 <template>
+  <div class="top-section">
+    <p># H5 Components Document</p>
+  </div>
   <main class="page-container">
     <div class="page-content">
       <left-menu></left-menu>
@@ -18,6 +21,22 @@ import LeftMenu from './left-menu/main.vue'
 </script>
 
 <style lang="scss" scoped>
+.top-section {
+  width: 100vw;
+  height: 60px;
+  background-color: white;
+  border-bottom: solid 1px #eee;
+  padding: 0 40px;
+
+  p {
+    margin: 0;
+    line-height: 60px;
+    color: #666;
+    font-size: 17px;
+    font-weight: bold;
+  }
+}
+
 .page-content {
   display: flex;
   justify-content: center;

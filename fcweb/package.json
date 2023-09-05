@@ -13,6 +13,7 @@
     "@highlightjs/vue-plugin": "^2.1.0",
     "@vant/area-data": "^1.5.0",
     "element-plus": "^2.3.8",
+    "flutter-core": "^0.1.1",
     "highlight.js": "^11.8.0",
     "moment": "^2.29.4",
     "rtlink-core": "^0.3.5",

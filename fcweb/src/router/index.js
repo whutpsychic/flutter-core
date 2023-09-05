@@ -129,6 +129,10 @@ const router = createRouter({
           path: 'setTopbarStyleToLight',
           component: () => import('../views/document-flutter-core/contents/setTopbarStyleToLight.vue')
         },
+        {
+          path: 'takePhoto',
+          component: () => import('../views/document-flutter-core/contents/takePhoto.vue')
+        },
         // -------------------------- permissions --------------------------
         {
           path: 'permissions/camera',

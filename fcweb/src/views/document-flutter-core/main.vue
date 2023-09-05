@@ -1,6 +1,6 @@
 <template>
   <div class="top-section">
-    <p># Flutter-core Document<span>v0.1.0</span></p>
+    <p># Flutter-core Document<span>v{{ version }}</span></p>
   </div>
   <main class="page-container">
     <div class="page-content">
@@ -16,6 +16,7 @@
 </template>
 
 <script setup>
+import { version } from "@/config.js";
 import LeftMenu from './left-menu/main.vue'
 
 </script>

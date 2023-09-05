@@ -26,6 +26,7 @@
       <el-menu-item index="/flutter-core/doc/getSafeHeight">getSafeHeight 获取安全高度</el-menu-item>
       <el-menu-item index="/flutter-core/doc/setTopbarStyleToDark">setTopbarStyleToDark 深色风格</el-menu-item>
       <el-menu-item index="/flutter-core/doc/setTopbarStyleToLight">setTopbarStyleToLight 浅色风格</el-menu-item>
+      <el-menu-item index="/flutter-core/doc/takePhoto">takePhoto 相机拍照</el-menu-item>
     </el-menu-item-group>
     <el-menu-item-group title="权限请求">
       <el-menu-item index="/flutter-core/doc/permissions/camera">camera 照相机/摄像头</el-menu-item>

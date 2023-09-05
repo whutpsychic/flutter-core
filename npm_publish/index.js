@@ -46,6 +46,10 @@ module.await = (name, fn) => {
   else if (name === "getSafeHeight") {
     fc.register("getSafeHeightCallback", fn);
   }
+  // 监听获取的图片
+  else if (name === "takePhoto") {
+    fc.register("takePhotoCallback", fn);
+  }
 };
 
 // 卸载函数

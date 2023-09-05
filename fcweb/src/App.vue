@@ -4,7 +4,7 @@
 
 <script >
 import { RouterView } from 'vue-router'
-import fc from "@/flutter-core/index.js"
+import fc from "flutter-core/index.js"
 
 export default {
   components: { RouterView },

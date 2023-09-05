@@ -53,10 +53,16 @@ service.getSafeHeight = () => {
 // 设置顶部条风格为深色
 service.setTopbarStyleToDark = () => {
   fc.call(`setTopbarStyleToDark`);
-}
+};
+
 // 设置顶部条风格为浅色
 service.setTopbarStyleToLight = () => {
   fc.call(`setTopbarStyleToLight`);
-}
+};
+
+// 去拍照
+service.takePhoto = () => {
+  fc.call(`takePhoto`);
+};
 
 export default service;

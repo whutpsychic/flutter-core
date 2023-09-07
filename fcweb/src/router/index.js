@@ -148,6 +148,15 @@ const router = createRouter({
         },
       ]
     },
+    // --------------------------- code-generator ---------------------------
+    {
+      path: '/code-generator',
+      component: () => import('../views/code-generator/main.vue')
+    },
+    {
+      path: '/code-generator/pullable-list',
+      component: () => import('../views/code-generator/pullable-list/main.vue')
+    },
     // ********************************************************************************
     // 默认导向
     {

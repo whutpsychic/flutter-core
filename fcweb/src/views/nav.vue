@@ -3,8 +3,13 @@
     <ul>
       <li><el-button class="btn-item" type="primary" @click="navto('flutter-core')">Flutter-core Document</el-button></li>
       <li><el-button class="btn-item" type="primary" @click="navto('h5')">H5 components Document</el-button></li>
-      <li><el-button class="btn-item" type="primary" @click="navto2('http://whutpsychic.gitee.io/rtlink-ui-plus/#/document/Icons')">Rtlink-ui-plus Document</el-button></li>
-      <li><el-button class="btn-item" type="primary" @click="navto2('http://whutpsychic.gitee.io/rtlink-core/#/document/deepClone')">Rtlink-core Document</el-button></li>
+      <li><el-button class="btn-item" type="primary"
+          @click="navto2('http://whutpsychic.gitee.io/rtlink-ui-plus/#/document/Icons')">Rtlink-ui-plus
+          Document</el-button></li>
+      <li><el-button class="btn-item" type="primary"
+          @click="navto2('http://whutpsychic.gitee.io/rtlink-core/#/document/deepClone')">Rtlink-core Document</el-button>
+      </li>
+      <li><el-button class="btn-item" type="primary" @click="navto('code-generator')">代码生成器</el-button></li>
     </ul>
   </div>
 </template>
@@ -21,6 +26,7 @@ const navto = (path) => {
 const navto2 = (path) => {
   window.location.href = path
 }
+
 </script>
 
 <style lang="scss" scoped>
@@ -47,5 +53,4 @@ const navto2 = (path) => {
 
 .btn-item {
   margin-bottom: 20px;
-}
-</style>
+}</style>

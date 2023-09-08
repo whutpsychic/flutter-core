@@ -23,7 +23,7 @@ import LeftMenu from './left-menu/main.vue'
 
 <style lang="scss" scoped>
 .top-section {
-  width: 100vw;
+  width: calc(100vw - 40px);
   height: 60px;
   background-color: white;
   border-bottom: solid 1px #eee;

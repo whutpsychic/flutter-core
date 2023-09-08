@@ -1,5 +1,4 @@
 .page-container {
-  width: 100vw;
   display: flex;
   justify-content: center;
 }
@@ -8,7 +7,6 @@
   min-width: 1280px;
   height: calc(100vh - 61px);
 }
-
 
 .page-main {
   main {

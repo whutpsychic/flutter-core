@@ -2,20 +2,24 @@
   "name": "flutter-core",
   "version": "1.0.0",
   "description": "rtlink's core connection module for flutter app.",
-  "main": "index.js",
+  "type": "module",
+  "files": [
+    "es",
+    "README.md"
+  ],
+  "main": "./es/index.mjs",
+  "module": "./es/index.umd.js",
+  "types": "./es/index.d.ts",
   "scripts": {
     "dev": "vite",
+    "build-lib": "tsc && vite build",
     "build": "run-p type-check build-only",
     "preview": "vite preview",
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
-  "dependencies": {},
   "devDependencies": {
-    "pinia": "^2.0.28",
-    "vue": "^3.2.45",
-    "vue-router": "^4.1.6",
     "@rushstack/eslint-patch": "^1.1.4",
     "@types/node": "^18.11.12",
     "@vitejs/plugin-vue": "^4.0.0",
@@ -26,9 +30,13 @@
     "eslint": "^8.22.0",
     "eslint-plugin-vue": "^9.3.0",
     "npm-run-all": "^4.1.5",
+    "pinia": "^2.0.28",
     "prettier": "^2.7.1",
     "typescript": "~4.7.4",
     "vite": "^4.0.0",
+    "vite-plugin-dts": "^3.7.3",
+    "vue": "^3.2.45",
+    "vue-router": "^4.1.6",
     "vue-tsc": "^1.0.12"
   },
   "keywords": [

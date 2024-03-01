@@ -1,6 +1,8 @@
 # flutter-core
 
-This template should help get you started developing with Vue 3 in Vite.
+Rtlink's core connection module for flutter app.
+
+Nodejs.ver: 20.10.0
 
 ## Recommended IDE Setup
 

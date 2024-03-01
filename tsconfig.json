@@ -1,14 +1,29 @@
 {
   "extends": "@vue/tsconfig/tsconfig.web.json",
+  // "include": ["lib"],
   "include": ["env.d.ts", "src/**/*", "src/**/*.vue"],
   "compilerOptions": {
+    "target": "ES2015",
+    "useDefineForClassFields": true,
+    "module": "ESNext",
+    "lib": [
+      "ES2015",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    /* Bundler mode */
+    "isolatedModules": true,
+    "noEmit": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"],
-      "$/*": ["./lib/*"],
+      "@/*": [
+        "./src/*"
+      ],
+      "$/*": [
+        "./lib/*"
+      ],
     }
   },
-
   "references": [
     {
       "path": "./tsconfig.config.json"

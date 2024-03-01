@@ -1,3 +1,0 @@
-import{ae as c,o as l,c as _,a as t,t as o,d as e}from"./index-4804161f.js";const i=t("h1",null,"Toast 短提示",-1),h=t("p",null,"这里使用的短提示是一种不可配置的，从屏幕底部弹出的最上层弹框，用于提示用户必要信息。",-1),r=t("p",null,"这种短提示是排队任务，如果频繁调用，则会将调用的历史记录全部安排至队列，然后一一显示。",-1),u=t("h3",null,o("<template />"),-1),p=t("h3",null,o("<script />"),-1),j={__name:"toast",setup(d){const n='<button @click="toast">Toast 短提示</button>',a=`const toast = () => {
-  fc.toast("这是一则短提示消息！");
-};`;return(m,g)=>{const s=c("highlightjs");return l(),_("main",null,[i,t("h2",null,o("fc.toast(<String> msg)"),1),h,r,u,e(s,{language:"xml",code:n}),p,e(s,{language:"javascript",code:a})])}}};export{j as default};

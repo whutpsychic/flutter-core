@@ -1,3 +1,0 @@
-import{ae as c,o as a,c as l,a as t,t as e,d as o}from"./index-4804161f.js";const i=t("h1",null,"打开 App 权限设置",-1),_=t("p",null,"调用此方法会唤起设备的“系统设置”功能，并跳转至本 App 的权限配置页。",-1),h=t("h3",null,e("<template />"),-1),r=t("h3",null,e("<script />"),-1),A={__name:"openAppSettings",setup(g){const p='<button @click="openAppSettings">打开 App 权限设置</button>',s=`const openAppSettings = () => {
-  fp.openAppSettings();
-}`;return(u,d)=>{const n=c("highlightjs");return a(),l("main",null,[i,t("h2",null,e("fp.openAppSettings()"),1),_,h,o(n,{language:"xml",code:p}),r,o(n,{language:"javascript",code:s})])}}};export{A as default};

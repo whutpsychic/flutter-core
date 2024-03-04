@@ -1,18 +1,18 @@
 <template>
   <main>
     <h1>请求读写数据权限</h1>
-    <h2>{{ `fp.request("storage")` }}</h2>
+    <h3>{{ `fp.request("storage")` }}</h3>
     <p>调用此方法通知 flutter 向设备请求相关权限。</p>
-    <h3>{{ "<template />" }}</h3>
+    <h5>{{ "<template />" }}</h5>
     <highlightjs language="xml" :code="xmlcode" />
-    <h3>{{ "<script />" }}</h3>
+    <h5>{{ "<script />" }}</h5>
     <highlightjs language="javascript" :code="jscode" />
     <p>同样地，您需要注册事后监听函数</p>
     <highlightjs language="javascript" :code="jscode2" />
   </main>
 </template>
 
-<script setup>
+<script lang="ts" setup>
 const xmlcode = `<button @click="getStorage">请求读写数据权限</button>`;
 
 const jscode = `const getStorage = () => {

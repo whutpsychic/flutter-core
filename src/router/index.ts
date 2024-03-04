@@ -13,6 +13,7 @@ const router = createRouter({
       path: '/home',
       component: Home,
       children: [
+        // ------------------------- 基础功能 -------------------------
         { path: '/home/done', component: () => import('../views/base/done.vue') },
         { path: '/home/ipconfig', component: () => import('../views/base/ipconfig.vue') },
         { path: '/home/modalConfirm', component: () => import('../views/base/modalConfirm.vue') },
@@ -22,6 +23,8 @@ const router = createRouter({
         { path: '/home/readLocal', component: () => import('../views/base/readLocal.vue') },
         { path: '/home/recordLocal', component: () => import('../views/base/recordLocal.vue') },
         { path: '/home/toast', component: () => import('../views/base/toast.vue') },
+        // ------------------------- 设备功能 -------------------------
+        { path: '/home/appUpdate', component: () => import('../views/device/appUpdate.vue') },
       ]
     },
     // {
@@ -39,6 +42,12 @@ const router = createRouter({
     {
       path: '/home',
       redirect: '/home/done'
+    },
+    // 404
+    {
+      path: '/:pathMatch(.*)*',
+      name: 'notFound',
+      component: () => import('../views/404/main.vue')
     },
   ]
 });

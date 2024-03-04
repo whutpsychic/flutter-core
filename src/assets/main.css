@@ -1,4 +1,4 @@
-@import './base.css';
+@import './common.scss';
 
 * {
   margin: 0;

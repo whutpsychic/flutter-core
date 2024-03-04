@@ -51,7 +51,7 @@ export default class ServiceBase {
   };
 
   // 读取本地缓存值
-  static readLocal = async (key: string): Promise<boolean> => {
+  static readLocal = async (key: string): Promise<string> => {
     return Fc.call(`readLocal`, key);
   };
 

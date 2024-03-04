@@ -13,10 +13,15 @@ const router = createRouter({
       path: '/home',
       component: Home,
       children: [
-        {
-          path: '/home/done',
-          component: () => import('../views/base/done.vue')
-        }
+        { path: '/home/done', component: () => import('../views/base/done.vue') },
+        { path: '/home/ipconfig', component: () => import('../views/base/ipconfig.vue') },
+        { path: '/home/modalConfirm', component: () => import('../views/base/modalConfirm.vue') },
+        { path: '/home/modalLoading', component: () => import('../views/base/modalLoading.vue') },
+        { path: '/home/modalProgress', component: () => import('../views/base/modalProgress.vue') },
+        { path: '/home/modalTips', component: () => import('../views/base/modalTips.vue') },
+        { path: '/home/readLocal', component: () => import('../views/base/readLocal.vue') },
+        { path: '/home/recordLocal', component: () => import('../views/base/recordLocal.vue') },
+        { path: '/home/toast', component: () => import('../views/base/toast.vue') },
       ]
     },
     // {
@@ -30,6 +35,10 @@ const router = createRouter({
     {
       path: '/',
       redirect: '/nav'
+    },
+    {
+      path: '/home',
+      redirect: '/home/done'
     },
   ]
 });

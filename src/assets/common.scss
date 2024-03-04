@@ -1,0 +1,41 @@
+ul {
+  list-style: none;
+}
+
+.page-container {
+  display: flex;
+  justify-content: center;
+}
+
+.page-content {
+  min-width: 1280px;
+  height: calc(100vh - 61px);
+}
+
+.page-main {
+  main {
+    padding: 30px;
+  }
+}
+
+h1,
+h3 {
+  margin-bottom: 0.5em;
+}
+
+h5 {
+  margin: 1em 0;
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+code {
+  font-size: 14px;
+  margin-bottom: 1em;
+}
+
+main.doc-content p {
+  text-indent: 2em;
+}

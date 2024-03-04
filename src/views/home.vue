@@ -1,6 +1,6 @@
 <template>
   <header class="top-header">
-    <p># Flutter-core Document<span>v{{ version }}</span></p>
+    <p><img class="logo" alt="" :src="rtlinkLogo" /><span>Flutter-core Document</span><span>v{{ version }}</span></p>
   </header>
   <main class="page-container">
     <div class="page-content">
@@ -17,10 +17,9 @@
 import { RouterView, useRouter } from 'vue-router';
 import LeftMenu from '@/components/LeftMenu.vue';
 import { version } from '../../package.json';
+import rtlinkLogo from '@/assets/img/logo.png';
 
 const router = useRouter();
-
-
 
 
 </script>
@@ -34,12 +33,18 @@ const router = useRouter();
 
   p {
     margin: 0 40px;
+    height: 60px;
     line-height: 60px;
     color: #666;
     font-size: 17px;
     font-weight: bold;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    height: 50%;
   }
 }
 

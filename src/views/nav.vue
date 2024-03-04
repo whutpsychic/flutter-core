@@ -2,7 +2,7 @@
   <div class="nav-page-container">
     <div class="btn-wrapper">
       <ul>
-        <li><el-button type="primary" @click="() => navTo('/home')">Flutter Document</el-button></li>
+        <li><el-button type="primary" @click="() => navTo('/home/done')">Flutter Document</el-button></li>
       </ul>
     </div>
   </div>

@@ -1,11 +1,14 @@
 <template>
   <main>
     <h1>请求照相机 / 摄像机权限</h1>
+    <h3>{{ "Promise<any>" }}</h3>
     <h3>{{ `fp.request("camera")` }}</h3>
     <p>调用此方法通知 flutter 向设备请求相关权限。</p>
     <h5>{{ "<template />" }}</h5>
     <highlightjs language="xml" :code="xmlcode" />
-    <h5>{{ "<script />" }}</h5>
+    <h5>{{ `
+      < script /> ` }}
+    </h5>
     <highlightjs language="javascript" :code="jscode" />
     <p>同样地，您需要注册事后监听函数</p>
     <highlightjs language="javascript" :code="jscode2" />
@@ -13,13 +16,13 @@
 </template>
 
 <script lang="ts" setup>
-const xmlcode = `<button @click="getCamera">请求照相机/摄像头权限</button>`;
+const xmlcode: string = `<button @click="getCamera">请求照相机/摄像头权限</button>`;
 
-const jscode = `const getCamera = () => {
+const jscode: string = `const getCamera = () => {
   fp.request("camera");
 }`;
 
-const jscode2 = `// 注册权限请求之后的动作函数
+const jscode2: string = `// 注册权限请求之后的动作函数
 fp.await("camera", (res) => {
   if (res === fp.status.denied) {
     fc.toast("需要申请")

@@ -33,7 +33,7 @@ export class fp {
 
   // 权限请求
   // h5 通过 flutter 向设备请求权限
-  public static request = async (name: string) => Fc.call(`pm_${name}`);
+  public static request = async (name: string): Promise<any> => Fc.call(`pm_${name}`);
 
 }
 

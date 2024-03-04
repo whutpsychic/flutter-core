@@ -25,15 +25,23 @@ const router = createRouter({
         { path: '/home/toast', component: () => import('../views/base/toast.vue') },
         // ------------------------- 设备功能 -------------------------
         { path: '/home/appUpdate', component: () => import('../views/device/appUpdate.vue') },
+        { path: '/home/checkNetworkType', component: () => import('../views/device/checkNetworkType.vue') },
+        { path: '/home/getSafeHeight', component: () => import('../views/device/getSafeHeight.vue') },
+        { path: '/home/launchInExplorer', component: () => import('../views/device/launchInExplorer.vue') },
+        { path: '/home/launchInnerExplorer', component: () => import('../views/device/launchInnerExplorer.vue') },
+        { path: '/home/phonecall', component: () => import('../views/device/phonecall.vue') },
+        { path: '/home/scan', component: () => import('../views/device/scan.vue') },
+        { path: '/home/scanBarcode', component: () => import('../views/device/scanBarcode.vue') },
+        { path: '/home/scanQR', component: () => import('../views/device/scanQR.vue') },
+        { path: '/home/setTopbarStyleToDark', component: () => import('../views/device/setTopbarStyleToDark.vue') },
+        { path: '/home/setTopbarStyleToLight', component: () => import('../views/device/setTopbarStyleToLight.vue') },
+        { path: '/home/takePhoto', component: () => import('../views/device/takePhoto.vue') },
+        // ------------------------- 权限相关 -------------------------
+        { path: '/home/permissions/camera', component: () => import('../views/permissions/camera.vue') },
+        { path: '/home/permissions/openAppSettings', component: () => import('../views/permissions/openAppSettings.vue') },
+        { path: '/home/permissions/storage', component: () => import('../views/permissions/storage.vue') },
       ]
     },
-    // {
-    //   path: '/home',
-    //   // route level code-splitting
-    //   // this generates a separate chunk (About.[hash].js) for this route
-    //   // which is lazy-loaded when the route is visited.
-    //   component: () => import('../views/AboutView.vue')
-    // },
     // ------------------- redirect -------------------
     {
       path: '/',

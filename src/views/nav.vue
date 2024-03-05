@@ -3,18 +3,40 @@
     <div class="btn-wrapper">
       <ul>
         <li><el-button type="primary" @click="() => navTo('/home/done')">Flutter Document</el-button></li>
+        <li><el-button type="primary" @click="() => navTo('/test-demo')">Test Demo</el-button></li>
       </ul>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+// import { onMounted } from 'vue';
 import { useRouter } from 'vue-router';
+import { fc } from '$/index';
+import tool from '@/tool';
 
 const router = useRouter();
+let initialized = false;
+
+fc.init().then((success: boolean) => {
+  if (success) {
+    initialized = true;
+
+    // 自动跳转
+    const _isMobile: boolean = tool.isMobile();
+
+    if (_isMobile) {
+      navTo(`/test-demo`);
+    } else {
+      navTo(`/home/done`);
+    }
+  }
+})
 
 const navTo = (path: string): void => {
-  router.push(path);
+  if (initialized) {
+    router.push(path);
+  }
 }
 </script>
 
@@ -30,11 +52,9 @@ const navTo = (path: string): void => {
 .btn-wrapper {
   width: 400px;
   min-height: 400px;
-  /* background-color: orange; */
 }
 
 .btn-wrapper li {
-  /* background-color: red; */
   display: flex;
   justify-content: center;
   align-items: center;

@@ -2,7 +2,7 @@
 // 本模块为 flutter 与 h5 相互通信的对接模块
 // 开发者：zbc
 // 创建日期：2021-06-07
-// 上次修改日期：2024-03-01
+// 上次修改日期：2024-03-05
 // =======================================
 
 export default class Fcore {
@@ -27,10 +27,4 @@ export default class Fcore {
     // @ts-ignore
     return window.flutter_inappwebview.callHandler(fnName, ...args);
   };
-
-  // static call = async (fnName: string, ...args: unknown[]): Promise<any> => {
-  //   console.log(fnName)
-  //   return Promise.resolve(fnName);
-  // }
-
 }

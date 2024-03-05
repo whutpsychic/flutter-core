@@ -2,7 +2,7 @@
 // 基础功能
 // 开发者：zbc
 // 创建日期：2024-01-15
-// 上次修改日期：2024-03-01
+// 上次修改日期：2024-03-05
 // =======================================
 import Fc from "./base/core";
 
@@ -16,13 +16,15 @@ export default class ServiceBase {
   };
 
   // 模态提示
-  static modalTips = async (title: string, msg: string): Promise<boolean> => {
+  static modalTips = async (title: string, msg: string): Promise<void> => {
     return Fc.call(`modalTips`, title, msg);
   };
 
   // 模态确认询问
-  static modalConfirm = async (title: string, msg: string): Promise<boolean> => {
-    return Fc.call(`modalConfirm`, title, msg);
+  static modalConfirm = async (title: string, msg: string): Promise<void> => {
+    return Fc.call(`modalConfirm`, title, msg).then((res: string) => {
+      if (res === 'false') throw new Error(`cancel`);
+    });
   };
 
   // 模态进度条展示
@@ -56,7 +58,7 @@ export default class ServiceBase {
   };
 
   // 到ip地址配置处去
-  static ipconfig = async (): Promise<void> => {
+  static ipConfig = async (): Promise<void> => {
     return Fc.call(`ipConfig`);
   };
 };

@@ -3,11 +3,19 @@
 // 配合 inappwebview 模块使用
 // 开发者：zbc
 // 创建日期：2024-01-15
-// 上次修改日期：2024-03-01
+// 上次修改日期：2024-03-04
 // =======================================
 import Fc from "./base/core";
 import Service_base from "./service_base";
 import Service_device from "./service_device";
+
+function _isMobile(): boolean {
+  return (
+    navigator.userAgent.match(
+      /(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i
+    ) != null
+  );
+}
 
 // flutter 权限状态表
 export enum PermissionStatus {
@@ -43,10 +51,16 @@ export class fc extends Fc implements Service_base, Service_device {
   public static init = async (): Promise<boolean> => {
     return new Promise((resolve, reject) => {
       try {
-        window.addEventListener("flutterInAppWebViewPlatformReady", () => {
-          sessionStorage.setItem('flutterInAppWebViewPlatformReady', 'true');
+        if (_isMobile()) {
+          window.addEventListener("flutterInAppWebViewPlatformReady", () => {
+            sessionStorage.setItem('flutterInAppWebViewPlatformReady', 'true');
+            resolve(true);
+          })
+        } else {
+          console.warn(`您正在web平台运行程序，所有flutter接口将无法调用，但不影响您继续运行程序！`);
+          console.log(`您正在web平台运行程序，所有flutter接口将无法调用，但不影响您继续运行程序！`);
           resolve(true);
-        })
+        }
       }
       catch (err) {
         console.error(err);
@@ -66,7 +80,7 @@ export class fc extends Fc implements Service_base, Service_device {
   public static modalProgressAdd = Service_base.modalProgressAdd;
   public static recordLocal = Service_base.recordLocal;
   public static readLocal = Service_base.readLocal;
-  public static ipconfig = Service_base.ipconfig;
+  public static ipConfig = Service_base.ipConfig;
 
   // Service_device
   public static appUpdate = Service_device.appUpdate;

@@ -2,7 +2,7 @@
 // 设备功能
 // 开发者：zbc
 // 创建日期：2024-01-15
-// 上次修改日期：2024-03-01
+// 上次修改日期：2024-03-05
 // =======================================
 import Fc from "./base/core";
 
@@ -13,7 +13,7 @@ export default class ServiceDevice {
   };
 
   // 拨打电话
-  static phonecall = async (number: string | number): Promise<void> => {
+  static phonecall = async (number: string): Promise<void> => {
     return Fc.call(`phonecall`, number);
   };
 

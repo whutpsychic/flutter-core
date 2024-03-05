@@ -5,10 +5,7 @@ import Home from '../views/home.vue';
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
-    {
-      path: '/nav',
-      component: Nav
-    },
+    { path: '/nav', component: Nav },
     {
       path: '/home',
       component: Home,
@@ -42,6 +39,8 @@ const router = createRouter({
         { path: '/home/permissions/storage', component: () => import('../views/permissions/storage.vue') },
       ]
     },
+    // ------------------------- 试验场 -------------------------
+    { path: '/test-demo', component: () => import('../views/test-demo.vue') },
     // ------------------- redirect -------------------
     {
       path: '/',

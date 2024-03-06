@@ -1,30 +1,26 @@
 <template>
   <main class="doc-content">
     <h1>modalTips 模态提示</h1>
-    <h3>{{ "fc.modalTips(msg: string)" }}</h3>
-    <p>这里是调用各平台的原生模态提示的方法，这是一种高仿真的视觉组件，调用的是 flutter 视觉组件，而并不是真实的原生平台组件。</p>
-    <h5>{{ "<template />" }}</h5>
-    <highlightjs language="xml" :code="xmlcode" />
+    <h3>{{ "Promise<void>" }}</h3>
+    <h3>{{ "fc.modalTips(title: string, msg: string)" }}</h3>
+    <p class="args">title: 提示标题; msg: 确认文案。</p>
+    <p>模态提示，这是一种高仿真的 flutter 视觉组件，而并不是真实的原生平台组件。</p>
+    <p>您可以在.then方法里编写点击确认后的逻辑。</p>
     <h5>{{ `
-      < script /> ` }}
+      <script lang="ts" /> ` }}
     </h5>
     <highlightjs language="typescript" :code="jscode" />
-    <p>如果您需要在模态提示时暂停任务，并在用户点击“确定 / 好”之后继续任务，那么您可以在 mounted 或者 created 处注册监听返回的函数。后续的任务可以在回调函数中进行。</p>
-    <highlightjs language="typescript" :code="jscode2" />
   </main>
 </template>
 
 <script lang="ts" setup>
-const xmlcode: string = `<button @click="modalTips">模态提示</button>`;
 
-const jscode: string = `const modalTips = () => {
-  fc.modalTips("标题", "这是一则重要提示！");
-};`;
+const jscode: string = `import { fc } from 'flutter-core';
 
-const jscode2: string = `// 如果需要在提示时暂停并且等待回馈，那么需要注册此函数
-fc.await("modalTips", (res) => {
-  fc.toast(res);
+fc.modalTips('标题', '内容').then(() => {
+  alert('接下来的动作')
 });`;
+
 </script>
 
 <style lang="scss" scoped></style>

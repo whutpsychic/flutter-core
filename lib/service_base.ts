@@ -28,22 +28,22 @@ export default class ServiceBase {
   };
 
   // 模态进度条展示
-  static modalLoading = async (content: string): Promise<boolean> => {
+  static modalLoading = async (content: string): Promise<void> => {
     return Fc.call(`modalLoading`, content);
   };
 
   // 模态进度条展示
-  static modalProgress = async (content: string): Promise<boolean> => {
+  static modalProgress = async (content: string): Promise<void> => {
     return Fc.call(`modalProgress`, content);
   };
 
   // 模态进度条设置值
-  static modalProgressSet = async (value: string | number): Promise<boolean> => {
+  static modalProgressSet = async (value: string | number): Promise<void> => {
     return Fc.call(`modalProgressSet`, value);
   };
 
   // 模态进度条增加值
-  static modalProgressAdd = async (value: string | number): Promise<boolean> => {
+  static modalProgressAdd = async (value: string | number): Promise<void> => {
     return Fc.call(`modalProgressAdd`, value);
   };
 

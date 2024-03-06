@@ -39,3 +39,8 @@ code {
 main.doc-content p {
   text-indent: 2em;
 }
+
+main.doc-content p.args {
+  text-indent: 0;
+  font-weight: bold;
+}

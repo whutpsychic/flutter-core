@@ -1,6 +1,6 @@
 var d = Object.defineProperty;
-var p = (e, a, l) => a in e ? d(e, a, { enumerable: !0, configurable: !0, writable: !0, value: l }) : e[a] = l;
-var t = (e, a, l) => (p(e, typeof a != "symbol" ? a + "" : a, l), l);
+var p = (o, a, l) => a in o ? d(o, a, { enumerable: !0, configurable: !0, writable: !0, value: l }) : o[a] = l;
+var t = (o, a, l) => (p(o, typeof a != "symbol" ? a + "" : a, l), l);
 class n {
 }
 // 预留的向 flutter 端发送一般信息的默认函数
@@ -17,23 +17,23 @@ t(n, "call", async (a, ...l) => {
     throw new Error("call函数中你传给flutter端的信息不是一个字符串,将无法识别!");
   return window.flutter_inappwebview.callHandler(a, ...l);
 });
-class o {
+class e {
 }
 // 完成操作/路由后退
-t(o, "done", async () => n.call("done")), // 短提示
-t(o, "toast", async (a) => n.call("toast", a)), // 模态提示
-t(o, "modalTips", async (a, l) => n.call("modalTips", a, l)), // 模态确认询问
-t(o, "modalConfirm", async (a, l) => n.call("modalConfirm", a, l).then((c) => {
-  if (c === "false")
+t(e, "done", async () => n.call("done")), // 短提示
+t(e, "toast", async (a) => n.call("toast", a)), // 模态提示
+t(e, "modalTips", async (a, l) => n.call("modalTips", a, l)), // 模态确认询问
+t(e, "modalConfirm", async (a, l) => n.call("modalConfirm", a, l).then((i) => {
+  if (i === "false")
     throw new Error("cancel");
 })), // 模态进度条展示
-t(o, "modalLoading", async (a) => n.call("modalLoading", a)), // 模态进度条展示
-t(o, "modalProgress", async (a) => n.call("modalProgress", a)), // 模态进度条设置值
-t(o, "modalProgressSet", async (a) => n.call("modalProgressSet", a)), // 模态进度条增加值
-t(o, "modalProgressAdd", async (a) => n.call("modalProgressAdd", a)), // 写入本地缓存值
-t(o, "recordLocal", async (a, l) => n.call("recordLocal", a, l)), // 读取本地缓存值
-t(o, "readLocal", async (a) => n.call("readLocal", a)), // 到ip地址配置处去
-t(o, "ipConfig", async () => n.call("ipConfig"));
+t(e, "modalLoading", async (a) => n.call("modalLoading", a)), // 模态进度条展示
+t(e, "modalProgress", async (a) => n.call("modalProgress", a)), // 模态进度条设置值
+t(e, "modalProgressSet", async (a) => n.call("modalProgressSet", a)), // 模态进度条增加值
+t(e, "modalProgressAdd", async (a) => n.call("modalProgressAdd", a)), // 写入本地缓存值
+t(e, "recordLocal", async (a, l) => n.call("recordLocal", a, l)), // 读取本地缓存值
+t(e, "readLocal", async (a) => n.call("readLocal", a)), // 到ip地址配置处去
+t(e, "ipConfig", async () => n.call("ipConfig"));
 class r {
 }
 // app 更新
@@ -55,19 +55,19 @@ t(r, "immersed", async () => n.call("immersed")), // 将app设置为非沉浸式
 t(r, "unImmersed", async () => n.call("unImmersed")), // 播放声音
 t(r, "beep", async () => n.call("beep")), // 定时通知
 t(r, "notification", async (a, l) => n.call("notification", a, l)), // 延时通知
-t(r, "periodNotification", async (a, l, c) => n.call("periodNotification", a, l, c));
+t(r, "periodNotification", async (a, l, i) => n.call("periodNotification", a, l, i));
 function u() {
   return navigator.userAgent.match(
     /(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i
   ) != null;
 }
-var m = /* @__PURE__ */ ((e) => (e.denied = "PermissionStatus.denied", e.granted = "PermissionStatus.granted", e.restricted = "PermissionStatus.restricted", e.limited = "PermissionStatus.limited", e.permanentlyDenied = "PermissionStatus.permanentlyDenied", e))(m || {});
-class i {
+var m = /* @__PURE__ */ ((o) => (o.denied = "PermissionStatus.denied", o.granted = "PermissionStatus.granted", o.restricted = "PermissionStatus.restricted", o.limited = "PermissionStatus.limited", o.permanentlyDenied = "PermissionStatus.permanentlyDenied", o.provisional = "PermissionStatus.provisional", o))(m || {}), y = /* @__PURE__ */ ((o) => (o.bluetooth = "ConnectivityResult.bluetooth", o.wifi = "ConnectivityResult.wifi", o.ethernet = "ConnectivityResult.ethernet", o.mobile = "ConnectivityResult.mobile", o.vpn = "ConnectivityResult.vpn", o.other = "ConnectivityResult.other", o))(y || {});
+class c {
 }
 // 打开App权限设置
-t(i, "openAppSettings", async () => n.call("openAppSettings")), // 权限请求
+t(c, "openAppSettings", async () => n.call("openAppSettings")), // 权限请求
 // h5 通过 flutter 向设备请求权限
-t(i, "request", async (a) => n.call(`pm_${a}`));
+t(c, "request", async (a) => n.call(`pm_${a}`));
 class s extends n {
 }
 t(s, "init", async () => new Promise((a, l) => {
@@ -75,14 +75,15 @@ t(s, "init", async () => new Promise((a, l) => {
     u() ? window.addEventListener("flutterInAppWebViewPlatformReady", () => {
       sessionStorage.setItem("flutterInAppWebViewPlatformReady", "true"), a(!0);
     }) : (console.warn("您正在web平台运行程序，所有flutter接口将无法调用，但不影响您继续运行程序！"), console.log("您正在web平台运行程序，所有flutter接口将无法调用，但不影响您继续运行程序！"), a(!0));
-  } catch (c) {
-    console.error(c), l(c);
+  } catch (i) {
+    console.error(i), l(i);
   }
 })), // Service_base
-t(s, "done", o.done), t(s, "toast", o.toast), t(s, "modalTips", o.modalTips), t(s, "modalConfirm", o.modalConfirm), t(s, "modalLoading", o.modalLoading), t(s, "modalProgress", o.modalProgress), t(s, "modalProgressSet", o.modalProgressSet), t(s, "modalProgressAdd", o.modalProgressAdd), t(s, "recordLocal", o.recordLocal), t(s, "readLocal", o.readLocal), t(s, "ipConfig", o.ipConfig), // Service_device
+t(s, "done", e.done), t(s, "toast", e.toast), t(s, "modalTips", e.modalTips), t(s, "modalConfirm", e.modalConfirm), t(s, "modalLoading", e.modalLoading), t(s, "modalProgress", e.modalProgress), t(s, "modalProgressSet", e.modalProgressSet), t(s, "modalProgressAdd", e.modalProgressAdd), t(s, "recordLocal", e.recordLocal), t(s, "readLocal", e.readLocal), t(s, "ipConfig", e.ipConfig), // Service_device
 t(s, "appUpdate", r.appUpdate), t(s, "phonecall", r.phonecall), t(s, "launchInExplorer", r.launchInExplorer), t(s, "launchInnerExplorer", r.launchInnerExplorer), t(s, "scanQR", r.scanQR), t(s, "scanBarcode", r.scanBarcode), t(s, "scan", r.scan), t(s, "checkNetworkType", r.checkNetworkType), t(s, "getSafeHeight", r.getSafeHeight), t(s, "setTopbarStyleToDark", r.setTopbarStyleToDark), t(s, "setTopbarStyleToLight", r.setTopbarStyleToLight), t(s, "takePhoto", r.takePhoto), t(s, "vibrate", r.vibrate), t(s, "heavyImpact", r.heavyImpact), t(s, "immersed", r.immersed), t(s, "unImmersed", r.unImmersed), t(s, "beep", r.beep), t(s, "notification", r.notification), t(s, "periodNotification", r.periodNotification);
 export {
+  y as ConnectivityResult,
   m as PermissionStatus,
   s as fc,
-  i as fp
+  c as fp
 };

@@ -3,30 +3,22 @@
     <h1>readLocal 读取本地缓存数据</h1>
     <h3>{{ "Promise<string>" }}</h3>
     <h3>{{ "fc.readLocal(key: string)" }}</h3>
-    <p>读取本地缓存数据，调用此方法会读取调用 fc.recordLocal(k, v) 存储的本地缓存数据。</p>
-    <h5>{{ "<template />" }}</h5>
-    <highlightjs language="xml" :code="xmlcode" />
+    <p class="args">key: 要读取的缓存键。</p>
+    <p>读取本地缓存数据，调用此方法会读取调用 fc.recordLocal(k, v) 存储的本地缓存数据。然后您可以在.then中得到读取的缓存数据。</p>
     <h5>{{ `
-      < script /> ` }}
+      <script lang="ts" /> ` }}
     </h5>
     <highlightjs language="typescript" :code="jscode" />
-    <p>在读取到数据之后进行某些操作时，您需要在 mounted 或者 created 处注册监听返回的函数。后续的任务可以在回调函数中进行。</p>
-    <highlightjs language="typescript" :code="jscode2" />
   </main>
 </template>
 
 <script lang="ts" setup>
 
-const xmlcode: string = `<button @click="readLocalData">读取缓存数据</button>`;
+const jscode: string = `import { fc } from 'flutter-core';
 
-const jscode: string = `const readLocalData = () => {
-  fc.readLocal("id");
-};`;
-
-const jscode2: string = `// 读取数据
-fc.await("readLocal", (res) => {
-  fc.toast(res);
-});`;
+fc.readLocal('keystr').then((res: string | null) => {
+  fc.toast(\`\${res}\`);
+})`;
 
 </script>
 

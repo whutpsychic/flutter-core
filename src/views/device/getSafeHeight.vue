@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main class="doc-content">
     <h1>getSafeHeight 获取安全高度</h1>
     <h3>{{ "Promise<number[]>" }}</h3>
     <h3>{{ "fc.getSafeHeight()" }}</h3>
@@ -11,29 +11,20 @@
     <p>沉浸式的优点是渲染范围更宽大，更舒适。</p>
     <p>在沉浸式条件下，有些内容则可能会被水滴、刘海、圆角遮盖，状态信息也会跟某些内容重叠，导致显示不全、不清晰、交互困难甚至不能。此时根据安全高度设置 padding 或者 margin
       则可以有效规避这些问题，给用户带来更好的使用体验。</p>
-    <h5>{{ "<template />" }}</h5>
-    <highlightjs language="xml" :code="xmlcode" />
     <h5>{{ `
-      <script />` }}
+      <script lang="ts" /> ` }}
     </h5>
     <highlightjs language="typescript" :code="jscode" />
-    <p>检查成功后，您需要在 mounted 或者 created 处注册监听返回结果的函数。后续的任务可以在回调函数中进行。</p>
-    <highlightjs language="typescript" :code="jscode2" />
   </main>
 </template>
 
 <script lang="ts" setup>
 
-const xmlcode: string = `<button @click="getSafeHeight">获取安全高度</button>`;
+const jscode: string = `import { fc } from 'flutter-core';
 
-const jscode: string = `const getSafeHeight = () => {
-  fc.getSafeHeight();
-};`;
-
-const jscode2: string = `// 安全高度
-fc.await("getSafeHeight", (res) => {
-  fc.toast(res);
-});`;
+fc.getSafeHeight().then((res: number[]) => {
+  alert(JSON.stringify(res))
+})`;
 
 </script>
 

@@ -29,6 +29,24 @@ export enum PermissionStatus {
   limited = "PermissionStatus.limited",
   // 未授权状态，需打开系统设置改变权限
   permanentlyDenied = "PermissionStatus.permanentlyDenied",
+  // 该应用程序被临时授权发布不中断的用户请求(iOS12+)
+  provisional = "PermissionStatus.provisional",
+}
+
+// flutter 网络连接状态表
+export enum ConnectivityResult {
+  // 蓝牙
+  bluetooth = "ConnectivityResult.bluetooth",
+  // wifi
+  wifi = "ConnectivityResult.wifi",
+  // 以太网
+  ethernet = "ConnectivityResult.ethernet",
+  // 移动网/蜂窝数据
+  mobile = "ConnectivityResult.mobile",
+  // VPN( Android only )
+  vpn = "ConnectivityResult.vpn",
+  // 未知类型 / iOS 使用VPN时
+  other = "ConnectivityResult.other",
 }
 
 // 权限操作

@@ -34,9 +34,8 @@ const router = createRouter({
         { path: '/home/setTopbarStyleToLight', component: () => import('../views/device/setTopbarStyleToLight.vue') },
         { path: '/home/takePhoto', component: () => import('../views/device/takePhoto.vue') },
         // ------------------------- 权限相关 -------------------------
-        { path: '/home/permissions/camera', component: () => import('../views/permissions/camera.vue') },
+        { path: '/home/permissions/request', component: () => import('../views/permissions/request.vue') },
         { path: '/home/permissions/openAppSettings', component: () => import('../views/permissions/openAppSettings.vue') },
-        { path: '/home/permissions/storage', component: () => import('../views/permissions/storage.vue') },
       ]
     },
     // ------------------------- 试验场 -------------------------
